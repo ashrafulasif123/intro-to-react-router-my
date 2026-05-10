@@ -10,6 +10,7 @@ import Posts from './components/Posts/Posts.jsx'
 import Blogs from './components/Blogs/Blogs.jsx'
 import About from './components/About/About.jsx'
 import Comments from './components/Comments/Comments.jsx'
+import UserDetailsPage from './components/UserDetailsPage/UserDetailsPage.jsx'
 
 const postsPromise = fetch('https://jsonplaceholder.typicode.com/posts')
   .then(res => res.json())
@@ -27,7 +28,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/users/:userId',
-        loader: ({ params }) => fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`)
+        loader: ({ params }) => fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
+        Component: UserDetailsPage
       },
       {
         path: '/comments',
@@ -40,7 +42,7 @@ const router = createBrowserRouter([
       {
         path: '/posts',
         element: <Suspense fallback={
-          <div className='absolute inset-0 flex justify-center items-center bg-white z-50'>
+          <div className='absolute inset-0 flex justify-center items-center'>
             <span className="loading loading-bars loading-lg"></span>
           </div>
         }>
@@ -52,6 +54,7 @@ const router = createBrowserRouter([
   { path: '/about', Component: About },
   { path: '/blogs', Component: Blogs },
   { path: '/app', Component: App },
+  { path: '*', element: <h1>Error 404 Found</h1> }
 
 ])
 
