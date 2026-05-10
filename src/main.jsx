@@ -40,7 +40,7 @@ const router = createBrowserRouter([
       {
         path: '/posts',
         element: <Suspense fallback={
-          <div className='absolute flex justify-center items-center bg-white z-50'>
+          <div className='absolute inset-0 flex justify-center items-center bg-white z-50'>
             <span className="loading loading-bars loading-lg"></span>
           </div>
         }>
