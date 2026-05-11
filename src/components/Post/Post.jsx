@@ -14,7 +14,7 @@ const Post = ({ post }) => {
     const postPromise = fetchingPost()
 
     return (
-        <div className="flex flex-col bg-white shadow-lg rounded-2xl p-6 border border-gray-200 mt-10">
+        <div className="flex flex-col bg-white shadow-lg rounded-2xl p-6 border border-gray-200 mt-10 relative">
 
             <div className="flex items-center justify-between mb-4">
                 <h2 className="text-xl font-bold text-gray-800">

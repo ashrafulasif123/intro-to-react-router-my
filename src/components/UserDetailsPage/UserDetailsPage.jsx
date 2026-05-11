@@ -3,6 +3,10 @@ import { useLoaderData, useNavigate } from "react-router";
 const UserDetailsPage = () => {
     const { id, name, address, company, email } = useLoaderData()
 
+    /** useParams() hook */
+    // const params = useParams()
+    // console.log(params)
+
     const navigate = useNavigate()
 
     return (
